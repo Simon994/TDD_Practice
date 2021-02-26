@@ -2,9 +2,11 @@ import React from 'react'
 
 import './Button.css'
 
-const Button = () => {
+const Button = (props) => {
   return (
-    <button>Cat/Dog</button>
+    <button onClick={props.onClick}>
+      {props.animal ? props.animal : 'Neither!'}
+    </button>
   )
 }
 

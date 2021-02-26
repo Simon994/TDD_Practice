@@ -1,18 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import Header from './Header'
 import Button from './Button'
 import CatDogImage from './CatDogImage'
+import defaultImage from '../images/defaultImage.jpeg'
 
 const CatDog = () => {
+  const [imageName, setImageName] = useState(defaultImage)
+  
+  const handleClick = (event) => {
+    setImageName(event.target.innerHTML)
+  }
+
   return(
     <>
       <Header />
       <div>
-        <Button />
-        <Button />
+        <Button animal='cat' onClick={handleClick}/>
+        <Button animal='dog'/>
       </div>
-      <CatDogImage />
+      <CatDogImage 
+        chosenImage={imageName}
+      />
     </>
   )
 }
