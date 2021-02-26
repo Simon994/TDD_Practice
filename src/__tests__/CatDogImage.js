@@ -1,6 +1,7 @@
 import { shallow } from 'enzyme'
 
 import CatDogImage from '../components/CatDogImage'
+import defaultImage from '../images/defaultImage.jpeg'
 
 describe('CatDogImage', () => {
   let mountedImage
@@ -18,7 +19,6 @@ describe('CatDogImage', () => {
   })
 
   it('renders a default image when no input is given', () => {
-    const defaultImage = mountedImage.find('img[src="images/default.jpg"]')
-    expect(defaultImage.length).toBe(1)
+    expect(mountedImage.find('img').prop('src')).toEqual(defaultImage)
   })
 })

@@ -1,0 +1,10 @@
+button {
+  color: black;
+  background: #BADA55;
+  padding: 20px;
+  border-radius: 5px;
+  display: inline-block;
+  border: 1px solid gray;
+  transition: all 0.4s ease 0s;
+  margin: 5px;
+}

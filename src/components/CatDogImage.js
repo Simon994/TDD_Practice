@@ -1,8 +1,10 @@
 import React from 'react'
+import './CatDogImage.css'
+import defaultImage from '../images/defaultImage.jpeg'
 
 const CatDogImage = () => {
   return (
-    <img src='images/default.jpg' alt='default'/>
+    <img className='image' src={defaultImage} alt='default'/>
   )
 }
 

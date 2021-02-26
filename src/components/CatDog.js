@@ -8,8 +8,10 @@ const CatDog = () => {
   return(
     <>
       <Header />
-      <Button />
-      <Button />
+      <div>
+        <Button />
+        <Button />
+      </div>
       <CatDogImage />
     </>
   )
