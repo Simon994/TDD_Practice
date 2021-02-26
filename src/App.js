@@ -1,11 +1,11 @@
 import CatDog from './components/CatDog'
 
 function App() {
-  return (
-    <>
-      <CatDog></CatDog>
-    </>
-  );
+    return (
+        <>
+            <CatDog></CatDog>
+        </>
+    )
 }
 
-export default App;
+export default App
