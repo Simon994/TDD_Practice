@@ -15,6 +15,13 @@ describe('Button', () => {
     const button = mountedButton.find('button')
     expect(button.length).toBe(1)
   })
+
+  it('calls a function when clicked', () => {
+    const mockCallback = jest.fn()
+    const mountedButton = shallow(<Button handleClick={mockCallback} />)
+    mountedButton.find('button').simulate('click')
+    expect(mockCallback.mock.calls.length).toEqual(1)
+  })
 })
 
 describe('When an animal is passed to the Button', () => {

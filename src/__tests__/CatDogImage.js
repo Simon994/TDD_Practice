@@ -9,34 +9,33 @@ describe('CatDogImage', () => {
   let mountedImage
   let props
 
-  beforeEach(() => {
-    props = {
-      chosenImage: defaultImage
-    }
-    mountedImage = shallow(<CatDogImage {...props}/>)
-  })
-
   it('renders without crashing', () => {
     shallow(<CatDogImage />)
   })
 
   it('renders an img element', () => {
+    mountedImage = shallow(<CatDogImage {...props}/>) 
     const catDogImage = mountedImage.find('img')
     expect(catDogImage.length).toBe(1)
   })
 
   it('renders a default image when no input is given', () => {
+    mountedImage = shallow(<CatDogImage />)
     expect(mountedImage.find('img').prop('src')).toEqual(defaultImage)
   })
 
   it('renders the cat image when chosenImage is cat', () => {
-    props.chosenImage = 'cat'
+    props = {
+      chosenImage: 'cat'
+    }
     mountedImage = shallow(<CatDogImage {...props}/>)
     expect(mountedImage.find('img').prop('src')).toEqual(cat)
   })
 
   it('renders the dog image when chosenImage is dog', () => {
-    props.chosenImage = 'dog'
+    props = {
+      chosenImage: 'dog'
+    }
     mountedImage = shallow(<CatDogImage {...props}/>)
     expect(mountedImage.find('img').prop('src')).toEqual(dog)
   })

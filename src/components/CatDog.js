@@ -16,8 +16,8 @@ const CatDog = () => {
     <>
       <Header />
       <div>
-        <Button animal='cat' onClick={handleClick}/>
-        <Button animal='dog' onClick={handleClick}/>
+        <Button animal='cat' handleClick={handleClick}/>
+        <Button animal='dog' handleClick={handleClick}/>
       </div>
       <CatDogImage 
         chosenImage={imageName}
