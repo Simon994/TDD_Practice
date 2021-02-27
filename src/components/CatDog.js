@@ -21,8 +21,8 @@ class CatDog extends React.Component {
       <>
         <Header />
         <div>
-          <Button animal='cat' handleClick={this.handleClick} id='catButton'/>
-          <Button animal='dog'/>
+          <Button animal='cat' handleClick={this.handleClick}/>
+          <Button animal='dog' handleClick={this.handleClick}/>
         </div>
         <CatDogImage 
           chosenImage={this.state.imageName}
