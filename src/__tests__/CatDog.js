@@ -1,14 +1,14 @@
-import { render } from '@testing-library/react'
-import { shallow } from 'enzyme'
+import { mount } from 'enzyme'
 import CatDog from '../components/CatDog'
+import CatDogImage from '../components/CatDogImage'
 
 describe('CatDog', () => {
   let mountedCatDog
   beforeEach(() => {
-    mountedCatDog = shallow(<CatDog />)
+    mountedCatDog = mount(<CatDog />)
   })
   it('renders CatDog', () => {
-    const mountedCatDog = shallow(<CatDog />)
+    mount(<CatDog />)
   })
 
   it('renders the Header', () => {
@@ -25,4 +25,14 @@ describe('CatDog', () => {
     const image = mountedCatDog.find('CatDogImage')
     expect(image.length).toBe(1)
   })
+})
+
+describe('handleClick', () => {
+  it('updates the state of CatDog based on which animal name is passed to it', () => {
+    const mountedCatDog = mount(<CatDog />)
+    const mockEvent = {target: {innerHTML: 'snail'}}
+    mountedCatDog.instance().handleClick(mockEvent)
+    expect(mountedCatDog.instance().state.imageName).toBe('snail')
+  })
+  
 })

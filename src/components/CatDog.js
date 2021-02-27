@@ -5,25 +5,31 @@ import Button from './Button'
 import CatDogImage from './CatDogImage'
 import defaultImage from '../images/defaultImage.jpeg'
 
-const CatDog = () => {
-  const [imageName, setImageName] = useState(defaultImage)
-  
-  const handleClick = (event) => {
-    setImageName(event.target.innerHTML)
+class CatDog extends React.Component {
+  state = {
+    imageName: defaultImage
   }
 
-  return(
-    <>
-      <Header />
-      <div>
-        <Button animal='cat' handleClick={handleClick}/>
-        <Button animal='dog' handleClick={handleClick}/>
-      </div>
-      <CatDogImage 
-        chosenImage={imageName}
-      />
-    </>
-  )
+  handleClick = (event) => {
+    this.setState({
+      imageName: event.target.innerHTML
+    })
+  }
+
+  render() {
+    return (
+      <>
+        <Header />
+        <div>
+          <Button animal='cat' handleClick={this.handleClick} id='catButton'/>
+          <Button animal='dog'/>
+        </div>
+        <CatDogImage 
+          chosenImage={this.state.imageName}
+        />
+      </>
+    )
+  }
 }
 
 export default CatDog
